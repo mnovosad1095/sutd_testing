@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Testing, MultiChoiceQuestion, Choice, MatchTask, MatchQuestion, TFStatement, TFTask, WordBoxTask, Sentence
 
+# aa
+
 
 class SentenceInline(admin.TabularInline):
     model = Sentence
