@@ -69,7 +69,8 @@ class TestingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Testing
-        fields = ('test_name', 'test_date', 'description','students', 'matches', 'multis', 'tf_tasks', 'word_boxes')
+        fields = ('id', 'test_name', 'all_time_opened', 'test_opening_date', 'test_closing_date', 'description',
+                  'students', 'matches', 'multis', 'tf_tasks', 'word_boxes')
 
 
 

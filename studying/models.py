@@ -1,16 +1,14 @@
-from django.db import models
-
-# Create your models here.
+from django.utils import timezone
 from django.db import models
 from students.models import Student
-
-# Create your models here.
 
 
 class Testing(models.Model):
     test_name = models.CharField(max_length=40)
     description = models.TextField()
-    test_date = models.DateTimeField()
+    all_time_opened = models.BooleanField(default=False)
+    test_opening_date = models.DateTimeField()
+    test_closing_date = models.DateTimeField(default=timezone.now())
     students = models.ManyToManyField(Student)
 
     def __str__(self):
@@ -46,12 +44,6 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
-
-
-# class MatchingChoice(models.Model):
-#     choice_text = models.CharField(max_length=40)
-#     match_question = models.ForeignKey(MatchQuestion, on_delete=models.CASCADE)
-#     points = models.IntegerField(default=1)
 
 
 class MatchQuestion(models.Model):

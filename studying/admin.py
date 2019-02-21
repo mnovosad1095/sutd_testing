@@ -1,10 +1,5 @@
 from django.contrib import admin
-
-# Register your models here.
-from django.contrib import admin
 from .models import Testing, MultiChoiceQuestion, Choice, MatchTask, MatchQuestion, TFStatement, TFTask, WordBoxTask, Sentence
-
-# Register your models here.
 
 
 class SentenceInline(admin.TabularInline):
@@ -33,18 +28,14 @@ class TFTaskAdmin(admin.ModelAdmin):
 
 class TestAdmin(admin.ModelAdmin):
     fieldsets = [
-         ('Testing', {'fields': ['test_name', 'description', 'test_date', 'students']})
+         ('Testing', {'fields': ['test_name', 'description', 'all_time_opened',
+                                 'test_opening_date', 'test_closing_date', 'students']})
      ]
 
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 1
-
-
-# class MatchChoiceInline(admin.TabularInline):
-#     model = MatchingChoice
-#     extra = 1
 
 
 class QuestionInline(admin.TabularInline):
